@@ -1,3 +1,5 @@
+const express = require('express');
+const router = express.Router();
 const connectToDatabase = require('../models/db');
 
 const GIFTS_COLLECTION = 'gifts';
@@ -57,7 +59,7 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res, next) => {
     try {
         const db = await connectToDatabase();
-        const collection = db.collection("gifts");
+        const collection = db.collection(GIFTS_COLLECTION);
         const gift = await collection.insertOne(req.body);
 
         res.status(201).json(gift.ops[0]);
