@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import './RegisterPage.css';
+import { urlConfig } from '../../config';
+import useAppContext from '../../context/AuthContext';
 
 function RegisterPage() {
 
@@ -9,10 +12,44 @@ function RegisterPage() {
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [showErr, setShowErr] = useState('');
+    const navigate = useNavigate();
+    const { setIsLoggedIn } = useAppContext();
 
     // insert code here to create handleRegister function and include console.log
     const handleRegister = async () => {
-        console.log('Register invoked');
+        //Step 1: Implement API call
+        const url = `${urlConfig.backendUrl}/api/auth/register`;
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                firstName,
+                lastName,
+                email,
+                password
+            })
+        });
+        if (!response.ok) {
+            return new Error(`Failed to register on: ${response.status}`);
+        }
+        //Step 2: Access data, login, set the AuthContext and set user details
+        const json = await response.json();
+        console.log('json data: ', json);
+        console.log('err: ', json.error);
+        
+        if (json.authToken) {
+            sessionStorage.setItem('auth-token', json.authToken);
+            sessionStorage.setItem('name', firstName);
+            sessionStorage.setItem('email', json.email);
+            setIsLoggedIn(true);
+            navigate('/app');
+        }
+        if (json.error) {
+            setShowErr(json.error);
+        }
     };
 
          return (
