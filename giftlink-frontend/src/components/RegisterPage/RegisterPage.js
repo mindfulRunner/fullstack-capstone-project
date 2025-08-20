@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import './RegisterPage.css';
 import { urlConfig } from '../../config';
-import useAppContext from '../../context/AuthContext';
+import { useAppContext } from '../../context/AuthContext';
 
 function RegisterPage() {
 
