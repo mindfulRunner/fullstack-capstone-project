@@ -36,7 +36,7 @@ router.get('/:id', async (req, res) => {
 
         // Task 2: use the collection() method to retrieve the gift collection
         // {{insert code here}}
-        const collection = db.collection(GIFTS_COLLECTION)
+        const collection = db.collection(GIFTS_COLLECTION);
 
         const id = req.params.id;
 
