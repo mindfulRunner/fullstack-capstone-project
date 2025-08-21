@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import './RegisterPage.css';
@@ -76,6 +76,8 @@ function RegisterPage() {
                                 <label htmlFor="password" className="form-label">Password</label><br/>
                                 <input id="password" type="password" className="form-control" placeholder="Enter your password" value={password} onChange={e => setPassword(e.target.value)}/>
                             </div>
+
+                            <span style={{color:'red',height:'.5cm',display:'block',fontStyle:'italic',fontSize:'12px'}}>{showErr}</span>
 
                             {/* insert code here to create a button that performs the `handleRegister` function on click */}
                             <button className="btn btn-primary w-100 mb-3" onClick={handleRegister}>Register</button>

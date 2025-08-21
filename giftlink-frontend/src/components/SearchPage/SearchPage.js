@@ -79,17 +79,17 @@ function SearchPage() {
                             <label htmlFor="categorySelect">Category</label>
                             <select id="categorySelect" className="form-control my-1">
                                 <option value="">All</option>
-                                {categories.map(category => {
+                                {categories.map(category => (
                                     <option key={category} value={category}>{category}</option>
-                                })}
+                                ))}
                             </select>
                             {/* Task 4: Implement an age range slider and display the selected value. */}
                             <label htmlFor="conditionSelect">Condition</label>
                             <select id="conditionSelect" className="form-control my-1">
                                 <option value="">All</option>
-                                {conditions.map(condition => {
+                                {conditions.map(condition => (
                                     <option key={condition} value={condition}>{condition}</option>
-                                })}
+                                ))}
                             </select>
                             {/* Task 7: Add text input field for search criteria*/}
                             <label htmlFor="ageRange">Less than {ageRange} years</label>
