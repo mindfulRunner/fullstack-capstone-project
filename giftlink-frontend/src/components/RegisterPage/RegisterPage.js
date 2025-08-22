@@ -33,6 +33,7 @@ function RegisterPage() {
             })
         });
         if (!response.ok) {
+            console.log(`Failed to register on: ${response.status}, ${response}`);
             return new Error(`Failed to register on: ${response.status}`);
         }
         //Step 2: Access data, login, set the AuthContext and set user details
