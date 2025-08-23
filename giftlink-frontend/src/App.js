@@ -1,5 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import HomePage from './components/HomePage/HomePage';
 import MainPage from './components/MainPage/MainPage';
 import LoginPage from './components/LoginPage/LoginPage';
 import RegisterPage from './components/RegisterPage/RegisterPage';
@@ -17,7 +18,7 @@ function App() {
         <Navbar/>
         <Routes>
           {/* the final code will not pass the products to every page, but each page will call the server API */}
-          <Route path="/" element={<MainPage />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/app" element={<MainPage />} />
           <Route path="/app/login" element={<LoginPage />} />
           <Route path="/app/register" element={<RegisterPage />} />
