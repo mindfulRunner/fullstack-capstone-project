@@ -19,3 +19,9 @@ Techs:
 	Containerization:
 	
 		Docker, Kubernetes, IBM Cloud
+
+Reference:
+
+	JavaScript Full Stack Capstone Project (a course of IBM Full-Stack JavaScript Developer Professional Certificate)
+
+	https://www.coursera.org/learn/javascript-full-stack-capstone-project?specialization=ibm-full-stack-javascript-developer
