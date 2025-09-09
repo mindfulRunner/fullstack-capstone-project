@@ -10,11 +10,11 @@ Techs:
 
 	Front end:
 	
-		JavaScript, React, React Hooks, HTTP fetch
+		JavaScript, React, React Hooks, HTTP fetch, navigation, session storage, async / await
 	
 	Back end:
 	
-		JavaScript, Node.js, Express.js, CORS, Router, REST API, MongoDB
+		JavaScript, Node.js, Express.js, CORS, Router, REST API, JWT, MongoDB, async / await
 	
 	Containerization:
 	
